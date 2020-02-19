@@ -14,6 +14,19 @@ export class AppComponent {
 
   name:string;
   userName:string;
+  private _customerName:string;
+
+  get cutomerName():string{
+    return this._customerName;
+  }
+
+  set cutomerName(value:string){
+     this._customerName = value;
+
+     if(value==='Sabrina'){
+      alert('hiii Sabrina!')
+    }
+  }
 
   incrementCount(){
     this.count+=1;
