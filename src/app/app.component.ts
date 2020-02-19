@@ -13,10 +13,18 @@ export class AppComponent {
   count = 0;
 
   name:string;
-  
+  userName:string;
+
   incrementCount(){
     this.count+=1;
 
+  }
+
+  greetMe(updatedValue){
+    this.userName = updatedValue;
+    if(updatedValue==='Sabrina'){
+      alert('Hey Sabrina!')
+    }
   }
 
 }
