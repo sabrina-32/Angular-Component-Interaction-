@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { EDEADLK } from 'constants';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
+ 
   title = 'Component Interaction';
 
   imgUrl = 'https://picsum.photos/200';
@@ -15,6 +17,13 @@ export class AppComponent {
   name:string;
   userName:string;
   private _customerName:string;
+  @ViewChild('nameRef',null)  nameElementRef:ElementRef;
+
+  ngAfterViewInit() {
+    this.nameElementRef.nativeElement.focus();
+    console.log(this.nameElementRef);
+    
+  }
 
   get cutomerName():string{
     return this._customerName;
