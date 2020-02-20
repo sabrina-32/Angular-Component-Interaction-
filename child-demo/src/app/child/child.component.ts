@@ -11,6 +11,8 @@ export class ChildComponent implements OnChanges {
   @Input() loggedIn: boolean ;
 
 message:string;
+name = "Sabrina";
+
 
 // get loggedIn():boolean{
 //   return this._loggedIn;
@@ -42,4 +44,9 @@ message:string;
     
   }
 
+
+  greetSabrina(){
+    alert("hey  Sabrina");
+    
+  }
 }
